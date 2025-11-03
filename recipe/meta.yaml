@@ -7,18 +7,19 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/navec-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/navec-{{ version }}.tar.gz
   sha256: 4f23474b1c279af6c605f84e7873e87c47ca58b0c538a3f9d30d90c609c9fd21
 
 build:
   skip: true  # [win]
-  number: 5
+  number: 6
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
     - pip
     - python
+    - setuptools
   run:
     - numpy
     - python
